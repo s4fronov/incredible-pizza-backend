@@ -3,19 +3,19 @@ import { Model } from 'mongoose';
 import { DatabaseMongoUUIDRepositoryAbstract } from 'src/common/database/abstracts/mongo/repositories/database.mongo.uuid.repository.abstract';
 import { DatabaseModel } from 'src/common/database/decorators/database.decorator';
 import {
-    TestDoc,
-    TestEntity,
-} from 'src/modules/test/repository/entities/test.entity';
+    OrderDoc,
+    OrderEntity,
+} from 'src/modules/order/repository/entities/order.entity';
 
 @Injectable()
-export class TestRepository extends DatabaseMongoUUIDRepositoryAbstract<
-    TestEntity,
-    TestDoc
+export class OrderRepository extends DatabaseMongoUUIDRepositoryAbstract<
+    OrderEntity,
+    OrderDoc
 > {
     constructor(
-        @DatabaseModel(TestEntity.name)
-        private readonly testModel: Model<TestEntity>
+        @DatabaseModel(OrderEntity.name)
+        private readonly orderModel: Model<OrderEntity>
     ) {
-        super(testModel);
+        super(orderModel);
     }
 }

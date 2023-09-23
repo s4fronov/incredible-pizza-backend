@@ -6,7 +6,7 @@ import {
     DocResponse,
 } from 'src/common/doc/decorators/doc.decorator';
 
-export function TestCreateDoc(): MethodDecorator {
+export function OrderCreateDoc(): MethodDecorator {
     return applyDecorators(
         Doc({
             operation: 'modules.test',
@@ -15,6 +15,6 @@ export function TestCreateDoc(): MethodDecorator {
             jwtAccessToken: true,
         }),
         DocGuard({ role: true }),
-        DocResponse('test.create')
+        DocResponse('order.create')
     );
 }
