@@ -1,7 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
-    IsEmail,
     IsNotEmpty,
     IsPhoneNumber
 } from 'class-validator';
@@ -23,7 +22,6 @@ export class OrderCreateDto {
     readonly mobileNumber: string;
 
     @ApiProperty()
-    @IsEmail()
     @Type(() => String)
     readonly email: string;
 

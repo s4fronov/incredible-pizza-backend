@@ -9,7 +9,7 @@ import {
 export function OrderCreateDoc(): MethodDecorator {
     return applyDecorators(
         Doc({
-            operation: 'modules.test',
+            operation: 'modules.order',
         }),
         DocAuth({
             jwtAccessToken: true,
