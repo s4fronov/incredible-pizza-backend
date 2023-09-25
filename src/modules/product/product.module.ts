@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ProductService } from './services/product.service';
-import { ProductRepositoryModule } from 'src/modules/product-type/repository/product.repository.module';
+import { ProductRepositoryModule } from 'src/modules/product/repository/product.repository.module';
 
 @Module({
     controllers: [],

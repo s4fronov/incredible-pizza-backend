@@ -5,7 +5,7 @@ import { DatabaseModel } from 'src/common/database/decorators/database.decorator
 import {
     ProductDoc,
     ProductEntity,
-} from 'src/modules/product-type/repository/entities/product.entity';
+} from 'src/modules/product/repository/entities/product.entity';
 
 @Injectable()
 export class ProductRepository extends DatabaseMongoUUIDRepositoryAbstract<

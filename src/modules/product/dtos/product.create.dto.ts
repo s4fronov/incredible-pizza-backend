@@ -8,8 +8,7 @@ import {
     IsEnum,
     IsNumber,
 } from 'class-validator';
-import { ENUM_PRODUCT_TYPE } from 'src/modules/product-type/constants/product.enum.constant';
-
+import { ENUM_PRODUCT_TYPE } from 'src/modules/product/constants/product.enum.constant';
 
 export class ProductCreateDto {
     @ApiProperty({

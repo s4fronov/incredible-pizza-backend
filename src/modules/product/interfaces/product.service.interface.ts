@@ -1,5 +1,5 @@
 import { IDatabaseCreateManyOptions } from 'src/common/database/interfaces/database.interface';
-import { ProductCreateDto } from 'src/modules/product-type/dtos/product.create.dto';
+import { ProductCreateDto } from 'src/modules/product/dtos/product.create.dto';
 
 export interface IProductService {
     createMany(

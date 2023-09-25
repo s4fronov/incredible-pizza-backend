@@ -4,8 +4,8 @@ import { DATABASE_CONNECTION_NAME } from 'src/common/database/constants/database
 import {
     ProductEntity,
     ProductSchema,
-} from 'src/modules/product-type/repository/entities/product.entity';
-import { ProductRepository } from 'src/modules/product-type/repository/repositories/product.repository';
+} from 'src/modules/product/repository/entities/product.entity';
+import { ProductRepository } from 'src/modules/product/repository/repositories/product.repository';
 
 @Module({
     providers: [ProductRepository],

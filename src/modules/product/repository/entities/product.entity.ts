@@ -2,7 +2,7 @@ import { Prop, SchemaFactory } from '@nestjs/mongoose';
 import { CallbackWithoutResultAndOptionalError, Document } from 'mongoose';
 import { DatabaseMongoUUIDEntityAbstract } from 'src/common/database/abstracts/mongo/entities/database.mongo.uuid.entity.abstract';
 import { DatabaseEntity } from 'src/common/database/decorators/database.decorator';
-import { ENUM_PRODUCT_TYPE } from '../../constants/product.enum.constant';
+import { ENUM_PRODUCT_TYPE } from 'src/modules/product/constants/product.enum.constant';
 
 export const ProductDatabaseName = 'product';
 
