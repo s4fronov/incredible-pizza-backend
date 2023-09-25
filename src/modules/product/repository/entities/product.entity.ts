@@ -4,7 +4,7 @@ import { DatabaseMongoUUIDEntityAbstract } from 'src/common/database/abstracts/m
 import { DatabaseEntity } from 'src/common/database/decorators/database.decorator';
 import { ENUM_PRODUCT_TYPE } from 'src/modules/product/constants/product.enum.constant';
 
-export const ProductDatabaseName = 'product';
+export const ProductDatabaseName = 'products';
 
 @DatabaseEntity({ collection: ProductDatabaseName })
 export class ProductEntity extends DatabaseMongoUUIDEntityAbstract {
