@@ -39,12 +39,13 @@
     "seed:apikey": "nestjs-command seed:apikey",
     "seed:role": "nestjs-command seed:role",
     "seed:user": "nestjs-command seed:user",
+    "seed:product": "nestjs-command seed:product",
     "rollback:setting": "nestjs-command remove:setting",
     "rollback:apikey": "nestjs-command remove:apikey",
     "rollback:role": "nestjs-command remove:role",
     "rollback:user": "nestjs-command remove:user",
-    "seed": "yarn seed:setting && yarn seed:role && yarn seed:user && yarn seed:apikey",
-    "rollback": "yarn rollback:setting && yarn rollback:apikey && yarn rollback:user && yarn rollback:role"
+    "seed": "yarn seed:setting && yarn seed:role && yarn seed:user && yarn seed:apikey && yarn seed:product",
+    "rollback": "yarn rollback:setting && yarn rollback:apikey && yarn rollback:user && yarn rollback:role && yarn seed:product"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.388.0",
