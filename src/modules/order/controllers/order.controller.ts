@@ -27,7 +27,7 @@ export class OrderController {
     @UserProtected()
     @Post('/create')
     async create(@Body()
-        { ...body}: OrderCreateDto
+        { ...body }: OrderCreateDto
     ): Promise<IResponse> {
         const create = await this.orderService.create({ ...body});
 
