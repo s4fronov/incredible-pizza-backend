@@ -62,10 +62,19 @@ export class ProductCreateDto {
     readonly labelText?: string;
 
     @ApiProperty({
+        description: 'Settings of pizza',
+        required: false,
+    })
+    @IsString()
+    @MinLength(3)
+    @MaxLength(1000)
+    @Type(() => String)
+    readonly pizzaSettings?: string;
+
+    @ApiProperty({
         description: 'Representative for product type',
         required: true,
     })
     @IsEnum(ENUM_PRODUCT_TYPE)
-    @IsNotEmpty()
-    readonly type: ENUM_PRODUCT_TYPE;
+    readonly type?: ENUM_PRODUCT_TYPE;
 }

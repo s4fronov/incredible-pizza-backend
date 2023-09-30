@@ -23,8 +23,8 @@ export class OrderController {
 
     @OrderCreateDoc()
     @Response('order.create')
-    @AuthJwtUserAccessProtected()
-    @UserProtected()
+    // @AuthJwtUserAccessProtected()
+    // @UserProtected()
     @Post('/create')
     async create(@Body()
         { ...body }: OrderCreateDto

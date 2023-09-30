@@ -10,17 +10,12 @@ export const ProductDatabaseName = 'products';
 export class ProductEntity extends DatabaseMongoUUIDEntityAbstract {
     @Prop({
         required: true,
-        // lowercase: true,
-        // minlength: 3,
-        // maxlength: 30,
         type: String,
     })
     title: string;
 
     @Prop({
         required: false,
-        // minlength: 3,
-        // maxlength: 100,
         type: String,
     })
     description: string;
@@ -39,8 +34,6 @@ export class ProductEntity extends DatabaseMongoUUIDEntityAbstract {
 
     @Prop({
         required: false,
-        // minlength: 3,
-        // maxlength: 100,
         type: String,
     })
     labelText?: string;

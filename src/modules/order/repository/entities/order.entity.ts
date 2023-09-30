@@ -1,53 +1,17 @@
-import { Prop, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
-import { DatabaseMongoUUIDEntityAbstract } from 'src/common/database/abstracts/mongo/entities/database.mongo.uuid.entity.abstract';
+import { AddressEntity } from './order.address.entity';
 import { DatabaseEntity } from 'src/common/database/decorators/database.decorator';
+import { DatabaseMongoUUIDEntityAbstract } from 'src/common/database/abstracts/mongo/entities/database.mongo.uuid.entity.abstract';
+import { Document } from 'mongoose';
+import { Prop, SchemaFactory } from '@nestjs/mongoose';
 import { 
     ENUM_PAYMENT_TYPE, 
     ENUM_CHANGE_TYPE, 
     ENUM_DELIVERY_TYPE, 
     ENUM_STATUS_TYPE,
 } from 'src/modules/order/constants/order.enum.constants';
+import { OrderProductEntity } from 'src/modules/order/repository/entities/order.product.entity';
 
 export const OrderDatabaseName = 'orders';
-
-export class AddressEntity {
-    @Prop({
-        required: true,
-        type: String,
-    })
-    street: string;
-
-    @Prop({
-        required: true,
-        type: String,
-    })
-    house: string;
-
-    @Prop({ 
-        required: false,
-        type: String, 
-    })
-    porch?: string;
-
-    @Prop({ 
-        required: false,
-        type: String,
-    })
-    floor?: string;
-
-    @Prop({ 
-        required: false,
-        type: String, 
-    })
-    apartment?: string;
-
-    @Prop({ 
-        required: false,
-        type: String, 
-    })
-    porchCode?: string;
-};
 
 @DatabaseEntity({ collection: OrderDatabaseName })
 export class OrderEntity extends DatabaseMongoUUIDEntityAbstract {
@@ -157,6 +121,22 @@ export class OrderEntity extends DatabaseMongoUUIDEntityAbstract {
         type: String, 
     })
     date: string;
+
+    @Prop({
+        required: true,
+        _id: false,
+        default: [],
+        type: [{
+            id: Number,
+            title: String,
+            description: String,
+            price: Number,
+            img: String,
+            labelText: String,
+            pizzaSettings: String,
+        }]
+    })
+    products: OrderProductEntity[];
 }
 
 export const OrderSchema = SchemaFactory.createForClass(OrderEntity);

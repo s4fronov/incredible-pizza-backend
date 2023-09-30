@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { OrderProductCreateDto } from 'src/modules/order/dtos/order.product.create.dto';
 import { Type } from 'class-transformer';
 import {
     IsNotEmpty,
@@ -84,4 +85,10 @@ export class OrderCreateDto {
     @ApiProperty()
     @Type(() => String)
     readonly time: string;
+
+    @ApiProperty({
+        required: true,
+    })
+    @Type(() => Array)
+    readonly products: OrderProductCreateDto[];
 }
