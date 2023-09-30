@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { IDatabaseCreateManyOptions, IDatabaseFindAllOptions } from 'src/common/database/interfaces/database.interface';
-import { ProductCreateDto } from 'src/modules/product/dtos/product.create.dto';
+import { ProductDto } from 'src/modules/product/dtos/product.dto';
 import { IProductService } from 'src/modules/product/interfaces/product.service.interface';
 import { ProductEntity } from 'src/modules/product/repository/entities/product.entity';
 import { ProductRepository } from 'src/modules/product/repository/repositories/product.repository';
@@ -17,7 +17,7 @@ export class ProductService implements IProductService {
     }
 
     async createMany(
-        data: ProductCreateDto[],
+        data: ProductDto[],
         options?: IDatabaseCreateManyOptions
     ): Promise<boolean> {
         const create: ProductEntity[] = data.map(({ 

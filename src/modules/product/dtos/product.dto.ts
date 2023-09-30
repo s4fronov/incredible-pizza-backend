@@ -10,7 +10,7 @@ import {
 } from 'class-validator';
 import { ENUM_PRODUCT_TYPE } from 'src/modules/product/constants/product.enum.constant';
 
-export class ProductCreateDto {
+export class ProductDto {
     @ApiProperty({
         description: 'Name of product',
         required: true,

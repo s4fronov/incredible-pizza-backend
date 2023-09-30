@@ -2,7 +2,7 @@ import { Command } from 'nestjs-command';
 import { Injectable } from '@nestjs/common';
 import { ProductService } from 'src/modules/product/services/product.service';
 import { ENUM_PRODUCT_TYPE } from 'src/modules/product/constants/product.enum.constant';
-import { ProductCreateDto } from 'src/modules/product/dtos/product.create.dto';
+import { ProductDto } from 'src/modules/product/dtos/product.dto';
 
 @Injectable()
 export class MigrationProductSeed {
@@ -13,7 +13,7 @@ export class MigrationProductSeed {
 		describe: 'seed products',
 	})
 	async seeds(): Promise<void> {
-		const dataProducts: ProductCreateDto[] = [
+		const dataProducts: ProductDto[] = [
 			{
 				title: 'Сырная',
 				description: 'Моцарелла, сыры чеддер и пармезан, фирменный соус альфредо',
