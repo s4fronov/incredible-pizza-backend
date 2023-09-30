@@ -4,7 +4,6 @@ import {
     Body, 
     Controller, 
     Post } from "@nestjs/common";
-import { UserProtected } from 'src/modules/user/decorators/user.decorator';
 import { Response } from 'src/common/response/decorators/response.decorator';
 import { OrderService } from "src/modules/order/services/order.service";
 import { OrderCreateDoc } from "src/modules/order/docs/order.doc";
@@ -23,8 +22,7 @@ export class OrderController {
 
     @OrderCreateDoc()
     @Response('order.create')
-    // @AuthJwtUserAccessProtected()
-    // @UserProtected()
+    @AuthJwtUserAccessProtected()
     @Post('/create')
     async create(@Body()
         { ...body }: OrderCreateDto
