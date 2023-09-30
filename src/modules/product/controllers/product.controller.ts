@@ -25,7 +25,7 @@ export class ProductController {
         @Param('type') type: string
 ): Promise<IResponse> {
 
-        const products: ProductEntity[] = await this.productService.findAllByType(type);
+        const products: ProductEntity[] = await this.productService.findAllByType(type.toUpperCase());
 
         return {
             data: products,
