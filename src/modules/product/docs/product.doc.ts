@@ -8,10 +8,5 @@ export function ProductListDoc(): MethodDecorator {
         Doc({
             operation: 'modules.product',
         }),
-        /*
-        DocRequest({
-            queries: [...RoleDocQueryIsActive, ...RoleDocQueryType],
-        })
-        */
     );
 }

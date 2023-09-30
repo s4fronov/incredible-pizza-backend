@@ -1,5 +1,5 @@
 import { IDatabaseCreateManyOptions, IDatabaseFindAllOptions } from 'src/common/database/interfaces/database.interface';
-import { ProductCreateDto } from 'src/modules/product/dtos/product.create.dto';
+import { ProductDto } from 'src/modules/product/dtos/product.dto';
 import { ProductEntity } from 'src/modules/product/repository/entities/product.entity';
 
 export interface IProductService {
@@ -9,7 +9,7 @@ export interface IProductService {
     ): Promise<ProductEntity[]>;
     
     createMany(
-        data: ProductCreateDto[],
+        data: ProductDto[],
         options?: IDatabaseCreateManyOptions
     ): Promise<boolean>;
 
