@@ -3,6 +3,11 @@ import { ProductDto } from 'src/modules/product/dtos/product.dto';
 import { ProductEntity } from 'src/modules/product/repository/entities/product.entity';
 
 export interface IProductService {
+    findAll(
+        find?: Record<string, any>,
+        options?: IDatabaseFindAllOptions
+    ): Promise<ProductEntity[]>;
+
     findAllByType(
         type: string,
         options?: IDatabaseFindAllOptions

@@ -9,6 +9,13 @@ import { ProductRepository } from 'src/modules/product/repository/repositories/p
 export class ProductService implements IProductService {
     constructor(private readonly productRepository: ProductRepository) {}
 
+    async findAll(
+        find?: Record<string, any>,
+        options?: IDatabaseFindAllOptions
+    ): Promise<ProductEntity[]> {
+        return this.productRepository.findAll<ProductEntity>(find, options);
+    }
+
     async findAllByType(
         type: string,
         options?: IDatabaseFindAllOptions

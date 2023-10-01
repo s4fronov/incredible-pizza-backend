@@ -11,10 +11,7 @@ import { OrderCreateDto } from "src/modules/order/dtos/order.create.dto";
 import { IResponse } from "src/common/response/interfaces/response.interface";
 
 @ApiTags('modules.order')
-@Controller({
-    version: '1',
-    path: '/order',
-})
+@Controller()
 export class OrderController {
     constructor(
         private readonly orderService: OrderService
