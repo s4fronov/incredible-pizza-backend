@@ -9,11 +9,8 @@ import {
     MinLength,
     IsUUID,
     IsOptional,
-    ValidateIf,
     IsEnum,
 } from 'class-validator';
-import { IsPasswordStrong } from 'src/common/request/validations/request.is-password-strong.validation';
-import { MobileNumberAllowed } from 'src/common/request/validations/request.mobile-number-allowed.validation';
 import { ENUM_USER_SIGN_UP_FROM } from 'src/modules/user/constants/user.enum.constant';
 
 export class UserCreateDto {
@@ -49,17 +46,11 @@ export class UserCreateDto {
     @Type(() => String)
     readonly lastName: string;
 
-    @ApiProperty({
-        example: faker.phone.number('62812#########'),
-        required: true,
-    })
     @IsString()
     @IsOptional()
     @MinLength(10)
     @MaxLength(14)
-    @ValidateIf((e) => e.mobileNumber !== '')
     @Type(() => String)
-    @MobileNumberAllowed()
     readonly mobileNumber?: string;
 
     @ApiProperty({
@@ -78,7 +69,6 @@ export class UserCreateDto {
         required: true,
     })
     @IsNotEmpty()
-    @IsPasswordStrong()
     @MaxLength(50)
     readonly password: string;
 
